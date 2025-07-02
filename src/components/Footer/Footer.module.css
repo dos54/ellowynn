@@ -1,0 +1,9 @@
+.footer {
+display: flex;
+flex-direction: column;
+align-items: center;}
+
+.sociallist {
+  display: flex;
+  gap: 2rem;
+}

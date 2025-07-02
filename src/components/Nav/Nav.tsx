@@ -1,12 +1,5 @@
 import styles from './Nav.module.css'
-
-const navItems = [
-  { title: 'Home', href: '/' },
-  { title: 'Projects', href: '/projects' },
-  { title: 'Events', href: '/events' },
-  { title: 'News', href: '/news' },
-  { title: 'About', href: '/about' },
-];
+import Link from 'next/link';
 
 export default function Nav() {
   const navList = [
@@ -15,8 +8,8 @@ export default function Nav() {
       href: '/',
     },
     {
-      title: 'Projects',
-      href: '/projects',
+      title: 'Books',
+      href: '/books',
     },
     {
       title: 'Events',
@@ -25,6 +18,10 @@ export default function Nav() {
     {
       title: 'News',
       href: '/news',
+    },
+    {
+      title: 'Blog',
+      href: '/blog',
     },
     {
       title: 'About',
@@ -37,7 +34,7 @@ export default function Nav() {
       <ul className={styles.navList}>
         {navList.map(navItem => (
           <li key={navItem.title} className={styles.navItem}>
-            <a href={navItem.href} className={styles.navLink}>{navItem.title}</a>
+            <Link href={navItem.href} className={styles.navLink}>{navItem.title}</Link>
           </li>
         ))}
       </ul>

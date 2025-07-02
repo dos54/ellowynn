@@ -1,8 +1,21 @@
 .header {
-  height: 72px;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  height: 92px;
+  background-color: aliceblue;
 }
 
-.wrapper {
+/* .wrapper {
   display: grid;
-  grid-template-columns: 48px 1fr;
+  grid-template-columns: 72px 1fr;
+} */
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
 }
