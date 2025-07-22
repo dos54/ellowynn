@@ -8,7 +8,6 @@ export default function NewsPage() {
       <h1>Here's some news</h1>
       <PostList postType="news" />
     </div>
-    <Sidebar />
     </>
   )
 }

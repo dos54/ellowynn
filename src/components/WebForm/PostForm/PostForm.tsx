@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-import styles from './PostForm.module.css'
+import styles from '../WebForm.module.css'
+import postFormStyle from './PostForm.module.css'
 
 type PostType = 'blog' | 'news' | 'event';
 
@@ -22,6 +23,8 @@ export default function PostForm({
   const [eventStart, setEventStart] = useState('');
   const [eventEnd, setEventEnd] = useState('');
   const [eventLocation, setEventLocation] = useState('');
+
+  const [publishNow, setPublishNow] = useState(true);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -67,6 +70,7 @@ export default function PostForm({
       Content
       <textarea
         placeholder="Content"
+        className={styles.textarea}
         value={content}
         onChange={e => setContent(e.target.value)}
       />
@@ -75,45 +79,52 @@ export default function PostForm({
       <label className={styles.label}>
         Publish now
         <input type="checkbox"
-          defaultChecked
-
+          checked={publishNow}
+          onChange={() => setPublishNow(!publishNow)}
          />
       </label>
 
-      <label className={styles.label}>
-      Publish Date
-      <input type="date"
-        value={publishDate}
-        onChange={e => setPublishDate(e.target.value)}
-        className='block w-200 border p-2'
-      />
-      </label>
+      {!publishNow && (
+        <label className={styles.label}>
+        Publish Date
+        <input type="date"
+          value={publishDate}
+          onChange={e => setPublishDate(e.target.value)}
+        />
+        </label>
+      )}
 
       {type === 'event' && (
         <>
+        <label className={styles.label}>
+          Event Start Date
           <input
             type="datetime-local"
             value={eventStart}
             onChange={e => setEventStart(e.target.value)}
-            className="block w-full border p-2"
             placeholder="Event Start"
           />
+        </label>
 
+        <label className={styles.label}>
+          Event End Date
           <input
             type="datetime-local"
             value={eventEnd}
             onChange={e => setEventEnd(e.target.value)}
-            className="block w-full border p-2"
             placeholder="Event End"
           />
+        </label>
 
+        <label className={styles.label}>
+          Event Location
           <input
             type="text"
             placeholder="Location"
             value={eventLocation}
             onChange={e => setEventLocation(e.target.value)}
-            className="block w-full border p-2"
           />
+        </label>
         </>
       )}
 

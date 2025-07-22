@@ -1,8 +1,9 @@
 .header {
   display: grid;
   grid-template-columns: 80px 1fr;
-  height: 92px;
-  background-color: aliceblue;
+  min-height: 92px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
 }
 
 /* .wrapper {
@@ -18,4 +19,12 @@
 .link {
   display: inline-flex;
   align-items: center;
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding-top: .5rem;
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -10,7 +10,6 @@ export default async function EventsPage() {
       <h1>Here's a list of all of the events coming up!</h1>
       <PostList postType="event" />
     </div>
-    <Sidebar />
     </>
   )
 }

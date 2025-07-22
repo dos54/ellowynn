@@ -1,3 +1,4 @@
+import SignIn from '../SignIn/SignIn'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -13,6 +14,9 @@ export default function Footer() {
           </li>
           <li>
             <a href="x.com">Twitter</a>
+          </li>
+          <li>
+            <SignIn />
           </li>
         </ul>
     </footer>

@@ -1,7 +1,8 @@
 .logo {
   display: block;
   margin: auto;
-  width: auto;
+  aspect-ratio: 1190.42 / 1535.18;
   height: 72px;
   padding: 0;
+  color: var(--md-sys-color-on-primary);
 }

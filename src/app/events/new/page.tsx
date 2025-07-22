@@ -1,4 +1,4 @@
-import PostForm from "@/components/PostForm/PostForm";
+import PostForm from "@/components/WebForm/PostForm/PostForm";
 
 export default function NewEventPage() {
   return (

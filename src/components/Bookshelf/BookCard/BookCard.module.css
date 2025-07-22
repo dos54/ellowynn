@@ -1,17 +1,16 @@
 .card {
   border-radius: 8px;
-  padding: .5rem;
   width: 90%;
-  max-width: 600px;
-  word-wrap: break-word;
-
+  max-width: 300px;
+  padding: .5rem;
+  
   background-color: var(--md-sys-color-surface-container-low);
   color: var(--md-sys-color-on-surface-container);
   border: 1px solid var(--md-sys-color-outline-variant);
-
+  border-bottom: 12px solid rgb(144, 124, 102);
 }
 
 .title {
-  font-weight: bold;
   font-size: large;
+  font-weight: bold;
 }
