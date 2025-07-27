@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/prisma";
+import ReadOnlyViewer from "@/components/ReadOnlyViewer/ReadOnlyViewer";
 
 export default async function EventsPostPage({
   params,
@@ -19,7 +20,7 @@ export default async function EventsPostPage({
   return (
     <div>
       <h1>{post.title}</h1>
-      <p>{post.content}</p>
+      <ReadOnlyViewer content={JSON.parse(post.content)} />
     </div>
   )
 }

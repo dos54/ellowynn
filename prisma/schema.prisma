@@ -30,6 +30,8 @@ model Book {
   updatedAt DateTime @updatedAt
   seriesId String?
 
+  coverImageUrl String @default("https://edit.org/images/cat/book-covers-big-2019101610.jpg")
+
   series Series? @relation(fields: [seriesId], references: [id], onDelete: SetNull)
   links BookLink[]
 }
@@ -101,4 +103,11 @@ model Page {
   name String
   content String
   updatedAt DateTime @updatedAt
+}
+
+model User {
+  id String @id @default(cuid())
+  username String @unique
+  email String @unique
+  role String
 }

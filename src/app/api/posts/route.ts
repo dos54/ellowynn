@@ -9,7 +9,7 @@ export async function POST(req: Request) {
     data: {
       type: data.type,
       title: data.title,
-      content: data.content,
+      content: JSON.stringify(data.content),
       pinned: data.pinned,
       publishedAt: new Date(data.publishDate),
       slug: slugify(data.title)

@@ -23,18 +23,18 @@ export default function Nav(
       title: 'Books',
       href: '/books',
     },
-    {
-      title: 'Events',
-      href: '/events',
-    },
-    {
-      title: 'News',
-      href: '/news',
-    },
-    {
-      title: 'Blog',
-      href: '/blog',
-    },
+    // {
+    //   title: 'Events',
+    //   href: '/events',
+    // },
+    // {
+    //   title: 'News',
+    //   href: '/news',
+    // },
+    // {
+    //   title: 'Blog',
+    //   href: '/blog',
+    // },
     {
       title: 'About',
       href: '/about',

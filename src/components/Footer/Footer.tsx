@@ -1,7 +1,15 @@
-import SignIn from '../SignIn/SignIn'
+import SignInOrOut from '../Auth/SignInOrOut'
 import styles from './Footer.module.css'
+import { auth } from '@/auth'
 
-export default function Footer() {
+export default async function Footer() {
+  const session = await auth()
+  const userGreeting = ''
+
+  if (session?.user) {
+
+  }
+
   return (
     <footer className={styles.footer}>
         <p>&copy; Ellowyn Beimler {new Date().getFullYear()}</p>
@@ -16,8 +24,9 @@ export default function Footer() {
             <a href="x.com">Twitter</a>
           </li>
           <li>
-            <SignIn />
+            <SignInOrOut />
           </li>
+          {session?.user && <li>You are logged in as {session.user.name}</li>}
         </ul>
     </footer>
   )

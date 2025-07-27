@@ -2,9 +2,12 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { SimpleEditor } from '@/components/tiptap-templates/simple/simple-editor';
+
 
 import styles from '../WebForm.module.css'
 import postFormStyle from './PostForm.module.css'
+
 
 type PostType = 'blog' | 'news' | 'event';
 
@@ -66,15 +69,10 @@ export default function PostForm({
       />
       </label>
 
-      <label className={styles.label}>
+      <label className={postFormStyle.contentEditorLabel}>
       Content
-      <textarea
-        placeholder="Content"
-        className={styles.textarea}
-        value={content}
-        onChange={e => setContent(e.target.value)}
-      />
       </label>
+      <SimpleEditor onChange={setContent} />
 
       <label className={styles.label}>
         Publish now
