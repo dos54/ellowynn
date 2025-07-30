@@ -3,7 +3,7 @@
 import { useEditor, EditorContent } from "@tiptap/react"
 import StarterKit from "@tiptap/starter-kit"
 
-export default function ReadOnlyViewer({ content }: {content: any}) {
+export default function ReadOnlyViewer({ content }: {content: string}) {
   const editor = useEditor({
     extensions: [StarterKit],
     content,

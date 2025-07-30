@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { uploadImage } from "@/lib/storage/uploadImage";
 import { prisma } from '@/lib/prisma'
-import { cp } from "fs";
 
 export async function GET() {
   const books = await prisma.book.findMany({
@@ -34,7 +33,8 @@ export async function POST(req: Request) {
 
 
 
-  const book = await prisma.book.create({
+  // const book = await prisma.book.create({
+  prisma.book.create({
     data: {
       title,
       description,

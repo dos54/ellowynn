@@ -1,5 +1,4 @@
 
-import Sidebar from "@/components/Sidebar/Sidebar"
 import Bookshelf from '@/components/Bookshelf/Bookshelf';
 
 export default async function BooksPage() {

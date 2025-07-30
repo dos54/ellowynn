@@ -4,7 +4,6 @@ import { auth } from '@/auth'
 
 export default async function Footer() {
   const session = await auth()
-  const userGreeting = ''
 
   if (session?.user) {
 
